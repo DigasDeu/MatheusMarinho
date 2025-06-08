@@ -1,0 +1,171 @@
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #fff8f3;
+  margin: 0;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #ff6b81;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.button {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  box-shadow: 0 6px 12px rgba(255, 192, 203, 0.2);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #ffe1e8;
+  transform: scale(1.03);
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+.circle-colors {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.c1 {
+  background-color: #ffd6e8;
+}
+
+.c2 {
+  background-color: #a0e7e5;
+}
+
+.c3 {
+  background-color: #b4f8c8;
+}
+
+.lockscreen-preview {
+  background: linear-gradient(to bottom, #ffd1dc, #ffc3a0);
+  color: #fff;
+  padding: 40px 0;
+  border-radius: 20px;
+  font-size: 40px;
+  margin-top: 10px;
+}
+
+.time {
+  font-size: 48px;
+}
+
+.icon {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.aod-clock {
+  background-color: #ff6b81;
+  color: white;
+  font-size: 18px;
+  padding: 12px 20px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 10px;
+}
+/* Estilos Gerais */
+body {
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Toggle de Tema */
+.theme-toggle {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+input[type="checkbox"] {
+  accent-color: #ff6b81;
+  transform: scale(1.2);
+  margin-right: 6px;
+}
+
+/* Tema Claro */
+body:not(:has(#darkToggle:checked)) {
+  background-color: #fff8f3;
+  color: #000;
+}
+
+body:not(:has(#darkToggle:checked)) .header {
+  color: #ff6b81;
+}
+
+body:not(:has(#darkToggle:checked)) .button {
+  background-color: #ffffff;
+  box-shadow: 0 6px 12px rgba(255, 192, 203, 0.2);
+}
+
+body:not(:has(#darkToggle:checked)) .button:hover {
+  background-color: #ffe1e8;
+}
+
+body:not(:has(#darkToggle:checked)) .lockscreen-preview {
+  background: linear-gradient(to bottom, #ffd1dc, #ffc3a0);
+}
+
+body:not(:has(#darkToggle:checked)) .aod-clock {
+  background-color: #ff6b81;
+  color: white;
+}
+
+/* Tema Escuro */
+body:has(#darkToggle:checked) {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+body:has(#darkToggle:checked) .header {
+  color: #ffd6e8;
+}
+
+body:has(#darkToggle:checked) .button {
+  background-color: #2a2a2a;
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.05);
+}
+
+body:has(#darkToggle:checked) .button:hover {
+  background-color: #333;
+}
+
+body:has(#darkToggle:checked) .lockscreen-preview {
+  background: linear-gradient(to bottom, #444, #222);
+}
+
+body:has(#darkToggle:checked) .aod-clock {
+  background-color: #ffd6e8;
+  color: #000;
+}

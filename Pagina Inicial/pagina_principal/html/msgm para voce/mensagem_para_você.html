@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Mensagem de Aniversário para Vini Matheus</title>
+    <style>
+        /* Importando uma fonte divertida do Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilização do body com fundo gradiente */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffdb58, #ff6b6b);
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container com efeito de carta */
+        .container {
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Animação de entrada */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Título com toque mágico (inspirado em Harry Potter) */
+        h1 {
+            font-size: 2.5rem;
+            color: #d32f2f;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        h1::after {
+            content: '✨';
+            position: absolute;
+            font-size: 1.5rem;
+            top: -10px;
+            right: -30px;
+        }
+
+        /* Parágrafos com tom amigável */
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        /* Citação estilizada com fundo temático */
+        blockquote {
+            background: linear-gradient(to right, #fff3e0, #ffe0b2);
+            border-left: 6px solid #ffb300;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-style: italic;
+            color: #3c2f2f;
+            position: relative;
+        }
+
+        blockquote::before {
+            content: '🏐';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.5rem;
+            opacity: 0.3;
+        }
+
+        /* Botão com animação vibrante */
+        button {
+            background: linear-gradient(45deg, #ff6b6b, #ff8f00);
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Assinatura destacada */
+        p.signature {
+            font-weight: 700;
+            color: #d32f2f;
+            font-size: 1.3rem;
+            margin-top: 10px;
+        }
+
+        /* Detalhe decorativo (inspirado em Harry Potter) */
+        .container::before {
+            content: '⚡️';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 2rem;
+            opacity: 0.2;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p, blockquote {
+                font-size: 1rem;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mensagem para você</h1>
+        <p>Olá, Vini Matheus! Não nos conhecemos há muito tempo, e pode parecer um pouco estranho eu fazer isso 😅, mas quero te dedicar uma mensagem especial:</p>
+        <blockquote>
+            "Matheus, parabéns por mais um ano de vida! Queria te agradecer, Vinicius Matheus Freire Marinho (kkk, acho que é assim), por ser meu amigo e por me ajudar a melhorar meu vôlei. Pelo que vi, você é um cara na sua, e acho incrível você como pessoa. Aliás, lembro até hoje quando você me falou sobre não se apegar tanto à religião, e você estava certo. Vi também que você é fã de Harry Potter (eu só li o livro) e de séries como [A.S] (Adult Swim). Bom, não sei muito sobre você e não quero me prolongar, mas tem mais coisas pra você ver, então deixei um botão aí embaixo, rs!"
+        </blockquote>
+        <p>Com carinho,</p>
+        <p class="signature">Digas!</p>
+        <a href="pagina_principal.html">
+             <button id="proximasCoisas">Ver próximas coisas</button>
+        </a>
+       
+    </div>
+</body>
+</html>
