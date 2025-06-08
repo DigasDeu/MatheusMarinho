@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Player</title>
+    <link rel="stylesheet" href="player.css">
+</head>
+<body>
+    <img src="background.png" id="background" />
+    <audio src="Pagode na Praia - Tô Vivendo.mp3" id="song"></audio>
+
+    <div class="container">  
+        <div class="box"></div>  
+            
+        <img src="Matheus.png" id="thumbnail" />
+        
+        <img src="play.png" onclick="playPause()" id="play-pause" />
+        <img src="forward.png" onclick="nextSong()" id="next-song" />
+        <img src="backward.png" onclick="previousSong()" id="previous-song" />
+
+        <div class="song-artist">Beyonce</div>
+        <div class="song-title">Don't Hurt Yourself</div>
+
+        <!-- Input element for progress bar - min=0 starting value of every song - max length will change per song so leave empty -->
+        
+        <input 
+            type="range" 
+            id="progress-bar" 
+            min="0" 
+            max="" 
+            value="0" 
+            onchange="changeProgressBar()"
+        />
+
+        <div class="currentTime"></div>
+        <div class="durationTime"></div>
+    </div>
+
+    <script src="player.js"></script>
+</body>
+</html>
