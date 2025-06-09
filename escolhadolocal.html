@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tipo de Conveniência</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 90%;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 16px;
+      color: #444;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 10px;
+      accent-color: #28a745;
+      width: 18px;
+      height: 18px;
+    }
+
+    .mensagem {
+      background: #e9f5ff;
+      border-left: 5px solid #00aaff;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 15px;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    .botoes {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .botoes button {
+      padding: 10px 20px;
+      font-size: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s ease-in-out;
+    }
+
+    .botoes button.whatsapp {
+      background-color: #25d366;
+      color: white;
+    }
+
+    .botoes button.nao {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    .botoes button:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 20px;
+      }
+
+      label {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🍔 Qual o tipo de conveniência?</h2>
+    <form>
+      <div class="checkbox-group">
+        <label><input type="checkbox" value="🍔 Lanchonete"> 🍔 Lanchonete</label>
+        <label><input type="checkbox" value="🍕 Pizzaria"> 🍕 Pizzaria</label>
+        <label><input type="checkbox" value="🍦 Sorveteria"> 🍦 Sorveteria</label>
+        <label><input type="checkbox" value="☕ Cafeteria"> ☕ Cafeteria</label>
+        <label><input type="checkbox" value="🥖 Padaria"> 🥖 Padaria</label>
+        <label><input type="checkbox" value="📦 Outros"> 📦 Outros</label>
+      </div>
+    </form>
+
+    <div class="mensagem" id="mensagem">
+      Selecione ao menos uma opção acima.
+    </div>
+
+    <h2>💬 Deseja receber mais informações?</h2>
+    <div class="botoes">
+      <button class="whatsapp" onclick="enviarMensagemWhatsApp('sim')">📲 Sim</button>
+      <button class="nao" onclick="enviarMensagemWhatsApp('nao')">❌ Não</button>
+    </div>
+  </div>
+
+  <script>
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const mensagemDiv = document.getElementById('mensagem');
+
+    function atualizarMensagem() {
+      const selecionados = Array.from(checkboxes)
+        .filter(c => c.checked)
+        .map(c => `${c.value} ✅`);
+
+      if (selecionados.length > 0) {
+        mensagemDiv.textContent = `✅ Você selecionou: ${selecionados.join(", ")}`;
+      } else {
+        mensagemDiv.textContent = "Selecione ao menos uma opção acima.";
+      }
+    }
+
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', atualizarMensagem);
+    });
+
+    function enviarMensagemWhatsApp(resposta) {
+      if (resposta === 'sim') {
+        const numero = '5592993361569'; // Substitua com seu número
+        const selecionados = Array.from(checkboxes)
+          .filter(c => c.checked)
+          .map(c => `${c.value} ✅`);
+
+        let mensagem = "Olá! 👋 Tenho interesse em receber mais informações";
+        if (selecionados.length > 0) {
+          mensagem += ` sobre:\n${selecionados.join("\n")}`;
+        }
+        mensagem += ".";
+
+        const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+        window.location.href = url;
+      } else {
+        alert('Você selecionou ❌ Não. Tudo bem!');
+      }
+    }
+  </script>
+</body>
+</html>

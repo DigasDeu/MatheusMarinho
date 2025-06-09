@@ -2,78 +2,220 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Galeria de Vídeos</title>
+  <title>Lembranças - Estilo TikTok</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      background-color: #fdfdfd;
-      margin: 0;
-      padding: 20px;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+      background-color: #000;
+      color: #fff;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      height: 100vh;
     }
 
     .video-container {
-      background-color: #fff;
-      padding: 10px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      scroll-snap-align: start;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
     }
 
     video {
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .volume-icon {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 8px 12px;
+      border-radius: 20px;
+      font-size: 20px;
+      color: white;
+      pointer-events: none;
+    }
+
+    h1 {
+      position: fixed;
+      top: 10px;
       width: 100%;
+      text-align: center;
+      font-size: 20px;
+      color: white;
+      z-index: 10;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 10px 0;
+    }
+
+    .sidebar {
+      position: absolute;
+      right: 10px;
+      bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      z-index: 10;
+    }
+
+    .sidebar button {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .sidebar button:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 16px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 6px 10px;
       border-radius: 10px;
     }
   </style>
 </head>
 <body>
 
-  <h1>🎥 Galeria de Vídeos</h1>
+  <h1>🎥 Lembranças</h1>
+
+  <!-- Exemplo de vídeo -->
   <div class="video-container">
-      <video controls>
-        <source src="Pravoce.mp4" type="video/mp4">
-      </video>
-
-  <div class="galeria">
-    <div class="video-container">
-      <video controls>
-        <source src="vd1.mp4" type="video/mp4">
-        
-      </video>
+    <video muted loop playsinline>
+      <source src="Pravoce.mp4" type="video/mp4">
+    </video>
+    <div class="volume-icon">🔇</div>
+    <div class="caption">Momentos especiais 💖</div>
+    <div class="sidebar">
+      <button title="Curtir">❤️</button>
+      <button title="Comentar">💬</button>
+      <button title="Compartilhar">📤</button>
     </div>
-
-    <div class="video-container">
-      <video controls>
-        <source src="vd2.mp4" type="video/mp4">
-        
-      </video>
-    </div>
-
-    <div class="video-container">
-      <video controls>
-        <source src="sle.mp4" type="video/mp4">
-       
-      </video>
-    </div>
-    <div class="video-container">
-      <video controls>
-        <source src="ataque.mp4" type="video/mp4">
-      </video>
-       
-      <div class="video-container">
-      <video controls>
-        <source src="ensinando.mp4" type="video/mp4">
-      </video>
   </div>
+
+  <!-- Repetir para os demais vídeos -->
+  <div class="video-container">
+    <video muted loop playsinline>
+      <source src="vd1.mp4" type="video/mp4">
+    </video>
+    <div class="volume-icon">🔇</div>
+    <div class="caption">Primeira viagem juntos ✈️</div>
+    <div class="sidebar">
+      <button title="Curtir">❤️</button>
+      <button title="Comentar">💬</button>
+      <button title="Compartilhar">📤</button>
+    </div>
+  </div>
+
+  <div class="video-container">
+    <video muted loop playsinline>
+      <source src="vd2.mp4" type="video/mp4">
+    </video>
+    <div class="volume-icon">🔇</div>
+    <div class="caption">Risos e mais risos 😂</div>
+    <div class="sidebar">
+      <button title="Curtir">❤️</button>
+      <button title="Comentar">💬</button>
+      <button title="Compartilhar">📤</button>
+    </div>
+  </div>
+
+  <div class="video-container">
+    <video muted loop playsinline>
+      <source src="sle.mp4" type="video/mp4">
+    </video>
+    <div class="volume-icon">🔇</div>
+    <div class="caption"> "Vai apanhar quando chegar em casa👄" </div>
+    <div class="sidebar">
+      <button title="Curtir">❤️</button>
+      <button title="Comentar">💬</button>
+      <button title="Compartilhar">📤</button>
+    </div>
+  </div>
+
+  <div class="video-container">
+    <video muted loop playsinline>
+      <source src="ensinando.mp4" type="video/mp4">
+    </video>
+    <div class="volume-icon">🔇</div>
+    <div class="caption">o divo ensinado🙄</div>
+    <div class="sidebar">
+      <button title="Curtir">❤️</button>
+      <button title="Comentar">💬</button>
+      <button title="Compartilhar">📤</button>
+    </div>
+  </div>
+
+<div class="video-container">
+    <video muted loop playsinline>
+      <source src="ataque.mp4" type="video/mp4">
+    </video>
+    <div class="volume-icon">🔇</div>
+    <div class="caption">olha que ataque lindo</div>
+    <div class="sidebar">
+      <button title="Curtir">❤️</button>
+      <button title="Comentar">💬</button>
+      <button title="Compartilhar">📤</button>
+    </div>
+  </div>
+
+
+  <!-- Continue para sle.mp4, ataque.mp4, ensinando.mp4 -->
+
+  <script>
+    const videos = document.querySelectorAll("video");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.play().catch(() => {});
+        } else {
+          entry.target.pause();
+        }
+      });
+    }, {
+      threshold: 0.75
+    });
+
+    videos.forEach(video => {
+      const container = video.parentElement;
+      const icon = container.querySelector('.volume-icon');
+
+      video.muted = true;
+      video.setAttribute('playsinline', '');
+      video.setAttribute('loop', '');
+      observer.observe(video);
+
+      video.addEventListener('click', () => {
+        video.muted = !video.muted;
+        icon.textContent = video.muted ? '🔇' : '🔊';
+      });
+    });
+  </script>
 
 </body>
 </html>
