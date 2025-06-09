@@ -93,6 +93,7 @@ body {
   display: inline-block;
   margin-top: 10px;
 }
+
 /* Estilos Gerais */
 body {
   font-family: 'Nunito', sans-serif;
@@ -168,4 +169,21 @@ body:has(#darkToggle:checked) .lockscreen-preview {
 body:has(#darkToggle:checked) .aod-clock {
   background-color: #ffd6e8;
   color: #000;
+}
+
+.profile-image {
+  display: block;
+  margin: 32px auto 24px auto; /* centraliza e dá espaçamento */
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%; /* deixa redonda */
+  border: 5px solid #fff;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18), 0 0 0 8px #ffe0b2;
+  background: #fff;
+  transition: box-shadow 0.3s;
+}
+
+.profile-image:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.28), 0 0 0 12px #ffd180;
 }
