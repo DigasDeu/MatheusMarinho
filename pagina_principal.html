@@ -21,7 +21,7 @@
 
   <div class="container">
 
-    <a class="button" href="mensagem_para_você.html">
+    <a class="button festa-cores" href="mensagem_para_você.html">
       🎈 Cores da Festa
       <div class="circle-colors">
         <div class="circle c1"></div>
@@ -57,5 +57,25 @@
 
 
   </div>
+
+  <audio id="bg-music" src="keshi - UNDERSTAND Piano Cover Sheets.mp3" autoplay loop></audio>
+
+  <script>
+  window.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById('bg-music');
+    function playAudio() {
+      audio.play();
+      document.removeEventListener('click', playAudio);
+      document.removeEventListener('touchstart', playAudio);
+    }
+    document.addEventListener('click', playAudio);
+    document.addEventListener('touchstart', playAudio);
+  });
+  </script>
+
 </body>
 </html>
+
+
+
+
